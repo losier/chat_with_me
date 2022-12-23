@@ -1,14 +1,28 @@
 {
-  "name": "chat-me",
+  "name": "chat_with_me",
   "version": "1.0.0",
-  "description": "",
+  "description": "A nodeJs CLI tool to chat with user.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "CLI",
+    "chat",
+    "nodejs"
+  ],
+  "author": "losier",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/losier/chat_with_me.git"
+  },
+  "bugs": {
+    "url": "https://github.com/losier/chat_with_me/issues"
+  },
+  "homepage": "https://github.com/losier/chat_with_me#readme",
   "license": "ISC",
   "devDependencies": {
     "prettier": "^2.8.1",
