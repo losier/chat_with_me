@@ -1,5 +1,3 @@
-import welcomeTxt from '../assets/welcomeTxt.json' assert { type: 'json', filename: 'welcomeTxt.json' };
-
 import chalk from 'chalk';
 import gradient from 'gradient-string';
 import chalkAnimation from 'chalk-animation';
@@ -11,6 +9,20 @@ import { v4 as uuidv4 } from 'uuid';
 const sleep = (ms = 1200) => new Promise((r) => setTimeout(r, ms));
 const user_id = uuidv4();
 var startingMsg = 'Hi...\n';
+
+const welcomeTxt = [
+  'Hello 👋',
+  'Namaste 🙏',
+  'Hola 👋',
+  'Hey',
+  'Welcome',
+  'Say hi!',
+  "Glad you're here",
+  'Good to see you',
+  'Yay you made it',
+  'Cheers!!!',
+  '👋',
+];
 
 async function welcome() {
   const title = welcomeTxt[Math.floor(Math.random() * welcomeTxt.length)];
