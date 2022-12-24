@@ -1,6 +1,6 @@
 {
   "name": "chat_with_me",
-  "version": "1.7.5",
+  "version": "2.0.1",
   "description": "A nodeJs CLI tool to chat with user.",
   "main": "src/index.js",
   "type": "module",
