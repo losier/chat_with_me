@@ -1,8 +1,8 @@
 {
   "name": "chat_with_me",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "description": "A nodeJs CLI tool to chat with user.",
-  "main": "src/index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
