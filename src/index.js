@@ -1,3 +1,4 @@
+/* A workaround for a bug in node.js. */
 "use strict";
 
 const { emitWarning } = process;
@@ -24,6 +25,7 @@ process.on("unhandledRejection", (reason, promise) => {
 
 
 
+/* Importing all the required modules. */
 import chalk from "chalk";
 import gradient from "gradient-string";
 import chalkAnimation from "chalk-animation";
@@ -32,10 +34,15 @@ import { createSpinner } from "nanospinner";
 import inquirer from "inquirer";
 import { v4 as uuidv4 } from "uuid";
 
+/**
+ * It generates a random user id.
+ * @param [ms=1200] - The amount of time to wait before sending the next message.
+ */
 const sleep = (ms = 1200) => new Promise((r) => setTimeout(r, ms));
 const user_id = uuidv4();
 var startingMsg = "Hi...\n";
 
+/* An array of strings. */
 const welcomeTxt = [
   "Hello 👋",
   "Namaste 🙏",
@@ -50,6 +57,11 @@ const welcomeTxt = [
   "👋",
 ];
 
+/**
+ * It takes a random string from an array, and then uses the figlet module to convert it to ASCII art.
+ * If the figlet module fails, it uses the chalkAnimation module to display the string in a rainbow
+ * animation.
+ */
 async function welcome() {
   const title = welcomeTxt[Math.floor(Math.random() * welcomeTxt.length)];
   console.clear();
@@ -66,6 +78,12 @@ async function welcome() {
   });
 }
 
+/**
+ * It asks a question, waits for the user to type in an answer, sends the answer to an API, gets a
+ * response from the API, and then repeats the process.
+ * </code>
+ * @returns A string.
+ */
 async function chat() {
   const question = await inquirer.prompt({
     name: "question",
@@ -97,6 +115,10 @@ async function chat() {
 }
 
 
+/**
+ * It waits for the welcome function to finish, then waits for 1 second, then waits for the chat
+ * function to finish.
+ */
 async function chat_with_me() {
   await welcome();
   await sleep(1000);
